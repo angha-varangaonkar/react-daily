@@ -1,5 +1,6 @@
 import { data } from 'autoprefixer'
-import { useEffect,useState } from 'react'
+import { useContext, useEffect,useState } from 'react'
+import { Datacontext } from '../datacontext'
 
 
 function DuplicateApi() {
@@ -10,6 +11,10 @@ function DuplicateApi() {
     const [title,setTitle] = useState("")
     const [price,setPrice] = useState("")
     const [rating,setRating] = useState("")
+
+
+    const {mydata} = useContext(Datacontext)
+
 
     useEffect(()=>{
         fetch(`https://dummyjson.com/products/${count}`).then((res)=>{
@@ -36,6 +41,10 @@ function DuplicateApi() {
     <div>
         <h1>My Data :</h1>
         <h1>{count}</h1>
+
+        {mydata.name}
+        {mydata.password}
+
     
         <button onClick={handleInc}> increment </button>
 

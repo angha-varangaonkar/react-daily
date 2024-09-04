@@ -67,8 +67,66 @@ return(
 )
 }
 
-export default App
+// export default App
 
 // day3:
+
+import React from 'react'
+
+function App() {
+  return (
+    <div>
+        <DuplicateApi/>
+
+    </div>
+  )
+}
+
+// export default App
+
+
+
+
+import React from 'react'
+import DuplicateApi from './Day3/DuplicateApi'
+import { Datacontext } from './datacontext'
+
+
+
+function App() {
+
+
+
+
+  const mydata = {
+    name:"angha",
+    password:"123"
+    
+  }
+
+
+
+
+return(
+  <div>
+      {/* <DuplicateApi/> */}
+   
+
+    <Datacontext.Provider value={{mydata}}>
+
+    <DuplicateApi/>
+    </Datacontext.Provider>
+
+
+
+  </div>
+)
+}
+
+export default App
+
+
+
+
 
 
