@@ -123,6 +123,74 @@ return(
 )
 }
 
+// export default App
+
+
+
+// day5:
+
+import React from 'react'
+import { BrowserRouter as Router,Route, Routes } from 'react-router-dom'
+import ProductCardList from './Day4/ProductCardList'
+import Navbar from './Day4/Navbar'
+import Homepage from './Day5/Homepage'
+import About from './Day5/About'
+import Contact from './Day5/Contact'
+
+
+function App() {
+  return (
+    <Router>
+    <div>
+      
+      <Navbar/>
+      <Routes >
+         <Route path='/' element={<Homepage/>} ></Route>
+         <Route path='/about' element={<About/>} ></Route>
+         <Route path='/contact' element={<Contact/>} ></Route>
+         <Route path='/Products' element={<ProductCardList/>} ></Route>
+         
+         
+      </Routes>
+      
+    
+     
+    </div>
+    </Router>
+ 
+  )
+}
+
+// export default App
+
+
+// day 6:
+import React from 'react'
+import { Datacontext } from './datacontext'
+import Context from './Day6/context'
+
+function App() {
+  const mydata = {
+    department :"cse",
+    pername:"angha",
+    rollno:"22etccs017"
+     }
+
+  return (
+    <div>
+      <h1>context API</h1>
+
+      <Datacontext.Provider value={{mydata}}>
+      <Context/>
+      
+      </Datacontext.Provider>
+
+      
+
+    </div>
+  )
+}
+
 export default App
 
 
